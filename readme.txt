@@ -16,3 +16,6 @@ a web app to test full stack knowledge (or to gain it :])
 	5) Our own repo has been created, it's once again an interface that extends JpaRepository
 	6) We create a service class, and inject the repo into the service constructor, of course we have to use annotations: @Service, @Autowired
 		- we add a method for adding employees and use a UUID to generate a random string for employee code
+		- then we create a method for finding all employees in an ArrayList
+		- we continue to create methods
+		- when we create an optional in repo (e.g. here it is for the findEmployeeByID method), we have to put a method to throw an error
