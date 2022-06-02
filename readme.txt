@@ -62,6 +62,13 @@ a web app to test full stack knowledge (or to gain it :])
     "phone": "785231496"
 }]
 
-	9)
+	9) Install Angular and create your new project inside your desired directory
+		- inside our app directory, in src/app/ create xxxxx.ts, an export interface of the name Employee, which represents the type of data thats inside
+		- next file will be employee.service.ts, where we add our functions, more in the file
+		- next we want to create a service, which we do using the "ng generate service name --skipTests=true" command, which creates name.service.ts, 
+		  which will contain our functionality, or its shell
+		- next we will go into app.components and that will serve a similar purpose to controller in spring boot, we are going to put our functions into it
+
+  
 		
 
