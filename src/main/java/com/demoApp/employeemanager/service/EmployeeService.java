@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.demoApp.employeemanager.exception.UserNotFoundException;
 import com.demoApp.employeemanager.model.Employee;
 import com.demoApp.employeemanager.repo.EmployeeRepo;
 
@@ -36,9 +37,9 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
-    public void deleteEmployee(Employee employee)
+    public void deleteEmployee(Long id)
     {
-        employeeRepo.deleteById(employee.getId());
+        employeeRepo.deleteById(id);
     }
 
     public Employee findEmployeeById(Long id)
