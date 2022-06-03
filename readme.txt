@@ -67,7 +67,41 @@ a web app to test full stack knowledge (or to gain it :])
 		- next file will be employee.service.ts, where we add our functions, more in the file
 		- next we want to create a service, which we do using the "ng generate service name --skipTests=true" command, which creates name.service.ts, 
 		  which will contain our functionality, or its shell
-		- next we will go into app.components and that will serve a similar purpose to controller in spring boot, we are going to put our functions into it
+		- next we will go into app.components and that will serve a similar purpose to controller in spring boot, we are going to put our functions into it,
+		  the functions are too complicated to be described here, so you'll have to check the file, but it is very simple to understand. I will describe some
+		  of the key methods here:
+						. everything is pretty straightforward except for the .subscribe() method, which we use to track data whenever we get a
+						  response from the server
+						. to our employee variable we defined we assign the response body, we also have to handle errors, perhaps why we use the
+						  alert(error.message) method	 
+		- we need to initialize our variable whenever the component is turned on, therefore we need the AppComponent class to implement OnInit
+		- we need to override the ngOnInit function in order for it to work and call our function, and its going to set our variable whenever the component is 
+		  initialized and we get a response from the server
+
+	10) (Next we start playing around in our HTML)
+		- first we create a div, we want it to display all the employees, therefore we use a *ngFor as its attribute, because we want to loop through all of them,
+		  and set it into the variable employee
+		- inside the div we can create an another div, which is going to contain the employee variables in this format: {{employee.name}}
+		- back in the employee service we need to specify the URL, which is going to be localhost
+		- next we need to check a programming file environments.ts, where we will define our variable that will contain the URL we are connecting to (which is localhost in our case)
+		- then, we can go back into our service (angular service) file and define our apiServerUrl as enviroment.whateverWeNamedTheVariableThatContainsTheUrl
+		- in service, we are letting the app know that the service is the service with the @Injectable({providedIn: root}), so we are letting the app know
+		- however, we still have to go into app.module.ts and specify our EmployeeService as a provider 
+		
+		- you either use the @Injectable method or the app.module.ts method
+		- when we try to run the program, it will compile successfully but it won't show anything since we didn't include our HTML file, we need to put
+		  HttpClientModule inside app.module.ts
+		- we are not able to reach the backend because of the Access-Control-Allow-Origin policy, which is common in all modern web browsers,
+		  it means that the application couldn't access data in an another domain, we need to change
+		- we specifically need to say in the back end to allow the localhost:4200 (where Angular is running) 
+		- we need to put a CorsFilter configuration into our EmployeeManagerApplication.java, basically where the main is
+		- beware of what you import when applying CorsFilter etc.., because if you accidentally import apache and not springframework, it's not going to work
+		
+	11) For HTML code, we use the example for employee cards, same for CSS, JS
+
+
+
+
 
   
 		
