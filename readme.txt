@@ -97,7 +97,17 @@ a web app to test full stack knowledge (or to gain it :])
 		- we need to put a CorsFilter configuration into our EmployeeManagerApplication.java, basically where the main is
 		- beware of what you import when applying CorsFilter etc.., because if you accidentally import apache and not springframework, it's not going to work
 		
-	11) For HTML code, we use the example for employee cards, same for CSS, JS
+	11) For HTML code (app.component.html), we use the example for employee cards, same for CSS, JS
+		- in our HTML code, we have the cards for the employees, in our div we are going to put the *ngFor attribute yet again, its going to connect to our employee
+		  variable specified in out app.component.ts file, create a local variable so it creates a card for every employee possible 
+		- in HTML we create a modal, and a function onOpenModal that we reference and have to create back in app.components.ts
+		- we have modals for every function we want to serve, including add, edit and delete
+		- index.html is the file that will ultimately get served, we need to put scripts for jquery, ajax and bootstrap
+
+	12) Angular Form
+		- we want our code to do something, so we have to connect the form created in angular to our back end
+
+		
 
 
 
