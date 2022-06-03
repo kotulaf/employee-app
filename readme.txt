@@ -106,6 +106,23 @@ a web app to test full stack knowledge (or to gain it :])
 
 	12) Angular Form
 		- we want our code to do something, so we have to connect the form created in angular to our back end
+		- to make reference to a form, we need to give it the attributes #addForm="ngForm and (ngSubmit)="onAddEmployee(addForm)", we don't have this function yet, so let's go create it in app.component.ts
+		- all of the configuration of the form so the variables get put into the html and connect with the back end
+
+	    Important note!
+		- there's a rule in TypeScript that requires you to define every variable, which is rather annoying, there are a few options to overcome the issue,
+		  the way i solved it was i added "| undefined". this issue was most relevant in app.components.ts, where we define all functions that we use in the app.component.html
+		- whatever we want to bind to the html we need to define in app.components.ts
+		- we are passing a value in HTML which represents an "employee", if we specified it in one of the top divs ("let employee of employees")
+
+		- after we put in our employee, it may happen that the form stays filled, for that we can use a method called addForm.reset() 
+		- next we will put an event listener on "Delete", in HTML we put in click listener in order to make it function
+		- to check whether there aren't any employees, we need to pass the variable employees into our html and check for its length
+		- next, we will add the search functionality using Array.indexOf()
+		- we will create a local variable that we want to hold all the data
+		- when we created the search function we need it to compare with whatever (name, email, phone, job title), therefore we use an if(employee.XXXX.toLowerCase().indexOf(key.toLowerCase()) !== -1)
+		  and OR 
+		- of course we have to make sure something happens even when we don't get a search result, which is where an if comes up and we just "print" all the employees
 
 		
 
